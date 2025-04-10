@@ -127,6 +127,7 @@ const WeatherInfo: React.FC = () => {
     return (
         <div className="weather">
             <h2>Nhập tên thành phố:</h2>
+            <br></br>
             <input
                 type="text"
                 placeholder="VD: Hanoi, Tokyo..."

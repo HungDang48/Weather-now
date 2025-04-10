@@ -1,5 +1,6 @@
+/* Default weather container */
 .weather {
-    background-color: #f0f0f0;
+    background-color: rgba(148, 139, 139, 0.5); /* Sử dụng giá trị alpha 0.8 cho độ trong suốt */
     color: #222;
     padding: 2rem;
     border-radius: 1rem;
@@ -8,29 +9,35 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 100px;
 }
 
+/* Dark mode adjustments */
 body[data-theme='dark'] .weather {
-    background-color: #2e2e3a;
+    background-color: rgba(46, 46, 58, 0.9); /* Độ trong suốt 0.9 cho nền */
     color: #fff;
 }
 
+/* Extra info styling */
 body[data-theme='dark'] .weather__extra {
     color: #ddd;
 }
 
+/* City name */
 .weather__city {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
+/* Date/Time */
 .weather__datetime {
     font-size: 0.9rem;
     color: inherit;
     margin-bottom: 1.5rem;
 }
 
+/* Main weather section */
 .weather__main {
     display: flex;
     flex-direction: column;
@@ -44,18 +51,21 @@ body[data-theme='dark'] .weather__extra {
     margin-bottom: 0.5rem;
 }
 
+/* Temperature */
 .weather__temp {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
+/* Description */
 .weather__desc {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     text-transform: capitalize;
 }
 
+/* Extra info like humidity, wind, etc. */
 .weather__extra {
     display: flex;
     justify-content: space-around;
@@ -63,6 +73,7 @@ body[data-theme='dark'] .weather__extra {
     color: inherit;
 }
 
+/* Search input */
 .weather__search {
     width: 100%;
     padding: 0.5rem 1rem;
@@ -72,6 +83,7 @@ body[data-theme='dark'] .weather__extra {
     margin-bottom: 0.5rem;
 }
 
+/* Suggestions list */
 .weather__suggestions {
     list-style: none;
     padding: 0;
@@ -95,6 +107,7 @@ body[data-theme='dark'] .weather__extra {
     background-color: #f0f0f0;
 }
 
+/* Favorites button */
 .weather__fav-btn {
     background-color: #ff4d4d;
     color: white;
@@ -110,6 +123,7 @@ body[data-theme='dark'] .weather__extra {
     background-color: #e63946;
 }
 
+/* Favorites list */
 .weather__favorites {
     margin-top: 1.5rem;
     text-align: left;
@@ -136,6 +150,7 @@ body[data-theme='dark'] .weather__extra {
     background-color: #f2f2f2;
 }
 
+/* Background video */
 .background-video {
     position: absolute;
     top: 0;
@@ -149,5 +164,82 @@ body[data-theme='dark'] .weather__extra {
 }
 
 .background-video.show {
-    opacity: 0.5; /* Tùy chỉnh độ sáng của video */
+    opacity: 0.5;
+}
+
+/* Media Queries for responsiveness */
+
+/* Khi màn hình có chiều rộng nhỏ hơn hoặc bằng 768px (tablet, mobile) */
+@media (max-width: 768px) {
+    .weather {
+        padding: 1.5rem; /* Giảm padding cho phù hợp với màn hình nhỏ */
+        max-width: 90%; /* Làm cho container chiếm gần hết chiều rộng */
+        margin: 1.5rem auto; /* Cải thiện margin */
+    }
+
+    .weather__city {
+        font-size: 1.6rem; /* Giảm kích thước font cho city */
+    }
+
+    .weather__temp {
+        font-size: 2.5rem; /* Giảm kích thước font cho temperature */
+    }
+
+    .weather__desc {
+        font-size: 1rem; /* Giảm kích thước font cho description */
+    }
+
+    .weather__extra {
+        flex-direction: column; /* Đổi thành cột */
+        align-items: flex-start;
+        font-size: 0.85rem; /* Giảm kích thước font */
+    }
+
+    .weather__search {
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+        font-size: 0.95rem; /* Giảm kích thước font */
+    }
+
+    .weather__suggestions {
+        max-height: 150px; /* Giảm chiều cao tối đa */
+    }
+
+    .weather__fav-btn {
+        width: 100%; /* Làm button chiếm toàn bộ chiều rộng */
+        font-size: 1rem; /* Giảm font-size */
+    }
+}
+
+/* Khi màn hình có chiều rộng nhỏ hơn hoặc bằng 480px (điện thoại) */
+@media (max-width: 480px) {
+    .weather {
+        padding: 1rem; /* Giảm padding */
+        max-width: 95%; /* Container chiếm gần hết chiều rộng */
+        margin: 1rem auto; /* Điều chỉnh margin */
+        margin-top: 100px;
+    }
+
+    .weather__city {
+        font-size: 1.4rem; /* Kích thước font nhỏ hơn cho city */
+    }
+
+    .weather__temp {
+        font-size: 2rem; /* Giảm kích thước font cho temperature */
+    }
+
+    .weather__desc {
+        font-size: 0.95rem; /* Giảm kích thước font cho description */
+    }
+
+    .weather__search {
+        padding: 0.4rem 0.8rem; /* Giảm padding của ô tìm kiếm */
+    }
+
+    .weather__suggestions {
+        max-height: 120px; /* Giảm chiều cao tối đa của suggestions */
+    }
+
+    .weather__fav-btn {
+        padding: 0.5rem 1rem; /* Điều chỉnh padding của button */
+    }
 }
