@@ -1,0 +1,153 @@
+.weather {
+    background-color: #f0f0f0;
+    color: #222;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme='dark'] .weather {
+    background-color: #2e2e3a;
+    color: #fff;
+}
+
+body[data-theme='dark'] .weather__extra {
+    color: #ddd;
+}
+
+.weather__city {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.weather__datetime {
+    font-size: 0.9rem;
+    color: inherit;
+    margin-bottom: 1.5rem;
+}
+
+.weather__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.weather__main img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.weather__temp {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.weather__desc {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.weather__extra {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.95rem;
+    color: inherit;
+}
+
+.weather__search {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.weather__suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #000;
+    z-index: 10;
+    position: relative;
+}
+
+.weather__suggestions li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.weather__suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.weather__fav-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.weather__fav-btn:hover {
+    background-color: #e63946;
+}
+
+.weather__favorites {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.weather__favorites h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather__favorites ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.weather__favorites li {
+    padding: 0.4rem 0.5rem;
+    cursor: pointer;
+    border-bottom: 1px dashed #ccc;
+}
+
+.weather__favorites li:hover {
+    background-color: #f2f2f2;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.background-video.show {
+    opacity: 0.5; /* Tùy chỉnh độ sáng của video */
+}

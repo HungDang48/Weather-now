@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +43,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+.main-content {
+  padding-top: 60px;
 }
